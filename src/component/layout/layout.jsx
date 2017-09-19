@@ -23,18 +23,19 @@ class Main extends Component {
         super(props);
     }
 
-
     shouldComponentUpdate(nextProps, nextState) {
         return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState))
     }
 
     render() {
         // 这个组件是一个包裹组件，所有的路由跳转的页面都会以this.props.children的形式加载到本组件下
+        const {tipText, show} = this.props;
         return (
-          <div>
-              233333
-              <div>{this.props.children}</div>
-          </div>
+            <div className="container">
+                <div ref="test" className="weui-toptips weui-toptips_warn"
+                     style={{'displey': show ? 'block' : 'none'}}>{tipText}</div>
+                <div className="page">{this.props.children}</div>
+            </div>
         );
     }
 }

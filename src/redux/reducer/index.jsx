@@ -1,23 +1,21 @@
-// import {fromJS} from 'immutable';
-// import {LOADING} from '../constants/dispatchTypes';
-
-// import Login from './login/loginReducer'; // 登录界面
-
-// 初始化state数据
-const initialState = {
-    loading: false
-};
-
-/**
- * 公共reducer
- * @return
- */
-
-const Common = (state = initialState, action) => {
+const Showtip = (state = {'curItem': ''}, action) => {
     switch (action.type) {
+        case 'SHOW_TIP':
+            return Object.assign({}, {
+                curItem: action.curItem
+            });
         default:
             return state;
     }
 }
+function counter(state = {count: 0}, action) {
+    const count = state.count
+    switch (action.type) {
+        case 'increase':
+            return {count: count + 1}
+        default:
+            return state
+    }
+}
 
-export {Common};
+export {Showtip, counter};
