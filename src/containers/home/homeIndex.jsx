@@ -1,8 +1,9 @@
 import React, {Component} from 'react'; // 引入了React和PropTypes
-import logo from '../../assets/logo.png';
+// import logo from '../../assets/logo.png';
 import './index.less';
-// import {showTip} from '../../redux/action';
+import {showTip} from '../../redux/action';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
 
 
 // 公共面包屑
@@ -32,8 +33,9 @@ class Main extends Component {
 
     submit() {
         if (!this.refs.tel.value) {
-            console.log(66666);
-            this.props.Showtip('用户名必填')
+            console.log(23333)
+            const {showtip} = this.props;
+            showtip({text: '用户名必填', show: true})
         }
     }
 
@@ -41,7 +43,7 @@ class Main extends Component {
         return (
             <div>
                 <div className="imgBox">
-                    <img src={logo} alt=""/>
+                    {/*<img src={logo} alt=""/>*/}
                 </div>
                 <div className="weui-cells weui-cells_form">
                     <div className="weui-cell">
@@ -76,7 +78,7 @@ class Main extends Component {
                     </span>
                 </label>
                 <div className="weui-btn-area">
-                    <a className="weui-btn weui-btn_primary" onClick={() => this.submit()}>下一步</a>
+                    <a className="weui-btn weui-btn_primary" onClick={()=>this.submit()}>下一步</a>
                 </div>
             </div>
         );
@@ -86,8 +88,12 @@ let select = state => {
     return state
 };
 
-function mapDispatchToProps() {
-    // showTip
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        showtip: showTip
+    }, dispatch);
+
+    // showTip2:(...args) => dispatch(showTip(...args))
 }
 
 export default (connect(select, mapDispatchToProps))(Main);

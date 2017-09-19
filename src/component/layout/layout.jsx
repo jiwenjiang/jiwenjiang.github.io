@@ -2,6 +2,7 @@ import React, {Component} from 'react'; // 引入了React和PropTypes。PropType
 
 import {is, fromJS} from 'immutable';
 
+import {connect} from 'react-redux';
 
 
 // 公共底部
@@ -22,6 +23,10 @@ class Main extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        // const {showTip} = this.props;
+        // console.log(this.props)
+    }
 
     shouldComponentUpdate(nextProps, nextState) {
         return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState))
@@ -29,15 +34,21 @@ class Main extends Component {
 
     render() {
         // 这个组件是一个包裹组件，所有的路由跳转的页面都会以this.props.children的形式加载到本组件下
-        const {tipText, show} = this.props;
+        const {Showtip} = this.props;
         return (
             <div className="container">
                 <div ref="test" className="weui-toptips weui-toptips_warn"
-                     style={{'displey': show ? 'block' : 'none'}}>{tipText}</div>
+                     style={{'display': Showtip.show ? 'block' : 'none'}}>{Showtip.text}</div>
                 <div className="page">{this.props.children}</div>
             </div>
         );
     }
 }
+const mapStateToProps = (state) => {
+    // state 是 {userList: [{id: 0, name: '王二'}]}
+    return {
+        Showtip: state.Showtip,
+    }
+}
 
-export default Main;
+export default connect(mapStateToProps)(Main);

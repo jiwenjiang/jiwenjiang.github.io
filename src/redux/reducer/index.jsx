@@ -1,8 +1,11 @@
-const Showtip = (state = {'curItem': ''}, action) => {
+const Showtip = (state = {text: '', show: false}, action) => {
+
     switch (action.type) {
         case 'SHOW_TIP':
+            // console.log(action);
             return Object.assign({}, {
-                curItem: action.curItem
+                text: action.item.text,
+                show: action.item.show
             });
         default:
             return state;
