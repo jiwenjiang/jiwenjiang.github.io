@@ -11,14 +11,32 @@ const home = (location, cb) => {
     }, 'home');
 }
 
+const info = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/info/index').default)
+    }, 'info');
+}
+
+const selectHos = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/info/hospital').default)
+    }, 'selectHos');
+}
+
+// const selectDe = (location, cb) => {
+//     require.ensure([], require => {
+//         cb(null, require('../containers/info/department').default)
+//     }, 'selectDe');
+// }
+
 
 const RouteConfig = (
     <Router history={browserHistory}>
         <Route path="/home" component={layout}>
             <IndexRoute getComponent={home}/>
-            <Route path="/home" getComponent={home}>
-
-            </Route>
+            <Route path="/home" getComponent={home}></Route>
+            <Route path="/info" getComponent={info}></Route>
+            <Route path="/selectHos/:id" getComponent={selectHos}></Route>
         </Route>
         <Redirect from="*" to="/home"/>
     </Router>

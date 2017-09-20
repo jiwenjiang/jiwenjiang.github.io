@@ -1,4 +1,3 @@
-import noty from '../../component/noty'
 const Tool = {};
 
 
@@ -65,23 +64,17 @@ Tool.ajax = function (mySetting) {
                 response = JSON.parse(response);
             }
             if (xhr.status == 200) { // 请求成功
-                switch (response.errcode) {
-                    case 0:
-                        if (mySetting.type !== 'GET') {
-                            noty('success', '请求成功');
-                        }
-                        setting.success(response.data, setting, xhr);
+                switch (response.respStatus.statusCode) {
+                    case 200:
+                        setting.success(response.respData, setting, xhr);
                         break;
                     case 1:
-                        noty('error', '服务器错误');
                         setting.success(response.data, setting, xhr);
                         break;
                     case 2:
-                        noty('warning', '请求错误');
                         setting.success(response.data, setting, xhr);
                         break;
                     default:
-                        noty('error', '未知错误');
                         setting.success(response.data, setting, xhr);
                         break;
                 }

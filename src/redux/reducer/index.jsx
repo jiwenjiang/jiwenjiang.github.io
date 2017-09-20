@@ -1,8 +1,6 @@
-const Showtip = (state = {text: '', show: false}, action) => {
-
+const tipMsg = (state = {text: '', show: false}, action) => {
     switch (action.type) {
         case 'SHOW_TIP':
-            // console.log(action);
             return Object.assign({}, {
                 text: action.item.text,
                 show: action.item.show
@@ -11,14 +9,22 @@ const Showtip = (state = {text: '', show: false}, action) => {
             return state;
     }
 }
-function counter(state = {count: 0}, action) {
-    const count = state.count
+const Hospital = (state = {}, action) => {
     switch (action.type) {
-        case 'increase':
-            return {count: count + 1}
+        case 'HOSPITAL':
+            return Object.assign({}, action.item);
         default:
-            return state
+            return state;
+    }
+}
+const Departments = (state = {}, action) => {
+    switch (action.type) {
+        case 'DEPARTMENTS':
+            return Object.assign({}, action.item);
+        default:
+            return state;
     }
 }
 
-export {Showtip, counter};
+
+export {tipMsg, Hospital, Departments};

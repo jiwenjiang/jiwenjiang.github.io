@@ -5,3 +5,17 @@ export const showTip = (item) => {
         item
     }
 }
+
+export const Hospital = (item) => {
+    return {
+        type: 'HOSPITAL',
+        item
+    }
+}
+
+export const Departments = (item) => {
+    return {
+        type: 'DEPARTMENTS',
+        item
+    }
+}

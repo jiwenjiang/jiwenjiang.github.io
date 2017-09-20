@@ -34,20 +34,19 @@ class Main extends Component {
 
     render() {
         // 这个组件是一个包裹组件，所有的路由跳转的页面都会以this.props.children的形式加载到本组件下
-        const {Showtip} = this.props;
+        const {msg} = this.props;
         return (
             <div className="container">
                 <div ref="test" className="weui-toptips weui-toptips_warn"
-                     style={{'display': Showtip.show ? 'block' : 'none'}}>{Showtip.text}</div>
+                     style={{'display': msg.show ? 'block' : 'none'}}>{msg.text}</div>
                 <div className="page">{this.props.children}</div>
             </div>
         );
     }
 }
 const mapStateToProps = (state) => {
-    // state 是 {userList: [{id: 0, name: '王二'}]}
     return {
-        Showtip: state.Showtip,
+        msg: state.tipMsg,
     }
 }
 

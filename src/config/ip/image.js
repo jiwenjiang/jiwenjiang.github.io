@@ -5,10 +5,7 @@
 import {collectIp} from './ip'
 
 const urls = {
-    imgList: 'get/dicomdata/imagecenter/list',
-    addLiked: 'get/dicomdata/favorits/add',
-    delLiked: 'get/dicomdata/favorits/cancel',
-    likedIds: 'get/dicomdata/favorits/list'
+   dicts:'bdType/dicts'
 }
 
 for (let attr in urls) {

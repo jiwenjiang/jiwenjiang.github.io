@@ -1,15 +1,10 @@
 import React, {Component} from 'react'; // 引入了React和PropTypes
-// import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.png';
 import './index.less';
 import {showTip} from '../../redux/action';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
-
-
-// 公共面包屑
-
-
-// import {Row,Col} from 'antd';
+import {bindActionCreators} from 'redux';
+import {browserHistory} from 'react-router';
 
 
 /* 以类的方式创建一个组件 */
@@ -22,8 +17,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        // const {showTip} = this.props;
-        console.log(this.props)
+        this.showTip = this.props.showTip;
     }
 
     handleChange() {
@@ -32,24 +26,45 @@ class Main extends Component {
 
 
     submit() {
-        if (!this.refs.tel.value) {
-            console.log(23333)
-            const {showtip} = this.props;
-            showtip({text: '用户名必填', show: true})
-        }
+        // const {tipMsg} = this.props;
+        // if (tipMsg.show) {
+        //     return false;
+        // }
+        // if (!(/^1[34578]\d{9}$/.test(this.refs.tel.value))) {
+        //     this.show({text: '手机号码必填', show: true});
+        //     return false;
+        // }
+        //
+        // if (!this.refs.checkcode.value) {
+        //     this.show({text: '验证码必填', show: true});
+        //     return false;
+        // }
+        // if (!this.refs.psw.value) {
+        //     this.show({text: '密码必填', show: true});
+        //     return false;
+        // }
+        browserHistory.push('/info')
+    }
+
+    show(a) {
+        this.showTip(a);
+        setTimeout(() => {
+            this.showTip({text: '', show: false})
+        }, 1500)
     }
 
     render() {
         return (
             <div>
                 <div className="imgBox">
-                    {/*<img src={logo} alt=""/>*/}
+                    <img src={logo} alt=""/>
                 </div>
                 <div className="weui-cells weui-cells_form">
                     <div className="weui-cell">
                         <div className="weui-cell__hd"><label className="weui-label">手机号</label></div>
                         <div className="weui-cell__bd">
-                            <input className="weui-input" ref="tel" type="tel" pattern="[0-9]*" placeholder="请输入手机号"/>
+                            <input className="weui-input" ref="tel" type="number" pattern="[0-9]*"
+                                   placeholder="请输入手机号"/>
                         </div>
                     </div>
                     <div className="weui-cell weui-cell_vcode">
@@ -74,11 +89,11 @@ class Main extends Component {
                     <input id="weuiAgree" type="checkbox" checked={this.state.checked} value={1}
                            onChange={() => this.handleChange()} className="weui-agree__checkbox"/>
                     <span className="weui-agree__text">
-                已阅读并同意<a >《连心医疗用户协议》</a>
+                            已阅读并同意<a>《连心医疗用户协议》</a>
                     </span>
                 </label>
                 <div className="weui-btn-area">
-                    <a className="weui-btn weui-btn_primary" onClick={()=>this.submit()}>下一步</a>
+                    <a className="weui-btn weui-btn_primary" onClick={() => this.submit()}>下一步</a>
                 </div>
             </div>
         );
@@ -90,10 +105,8 @@ let select = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        showtip: showTip
+        showTip: showTip
     }, dispatch);
-
-    // showTip2:(...args) => dispatch(showTip(...args))
 }
 
-export default (connect(select, mapDispatchToProps))(Main);
+export default connect(select, mapDispatchToProps)(Main);
