@@ -23,6 +23,12 @@ const selectHos = (location, cb) => {
     }, 'selectHos');
 }
 
+const succ = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/succ/index').default)
+    }, 'succ');
+}
+
 // const selectDe = (location, cb) => {
 //     require.ensure([], require => {
 //         cb(null, require('../containers/info/department').default)
@@ -35,8 +41,9 @@ const RouteConfig = (
         <Route path="/home" component={layout}>
             <IndexRoute getComponent={home}/>
             <Route path="/home" getComponent={home}></Route>
-            <Route path="/info" getComponent={info}></Route>
-            <Route path="/selectHos/:id" getComponent={selectHos}></Route>
+            <Route path="/info/:id" getComponent={info} ></Route>
+            <Route path="/selectHos/:id/:user" getComponent={selectHos} ></Route>
+            <Route path="/succ" getComponent={succ}></Route>
         </Route>
         <Redirect from="*" to="/home"/>
     </Router>

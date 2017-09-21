@@ -5,7 +5,11 @@
 import {collectIp} from './ip'
 
 const urls = {
-   dicts:'bdType/dicts'
+    dicts: 'bdType/dicts',
+    checkAccount: 'users/accounts/exist',
+    getCode: 'users/cellphone/message/get',
+    regist: 'users/phone/register',
+    info: 'perfect/user'
 }
 
 for (let attr in urls) {

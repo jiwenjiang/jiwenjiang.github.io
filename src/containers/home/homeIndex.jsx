@@ -5,6 +5,8 @@ import {showTip} from '../../redux/action';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
+import url from '../../config/ip/image';
+import xhr from '../../services/xhr/index';
 
 
 /* 以类的方式创建一个组件 */
@@ -12,7 +14,9 @@ class Main extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            checked: true
+            checked: true,
+            checkState: '获取验证码',
+            telValid: false
         };
     }
 
@@ -24,26 +28,85 @@ class Main extends Component {
         this.setState({checked: !this.state.checked});
     }
 
+    checkTel() {
+        if (/^1[34578]\d{9}$/.test(this.refs.tel.value)) {
+            xhr.get(url.checkAccount, {account: this.refs.tel.value}, (data) => {
+                if (data.errcode == 10002) {
+                    this.setState({telValid: true});
+                }
+                if (data.errcode == 10001) {
+                    this.setState({telValid: false});
+                    this.show({text: '手机号码已注册', show: true});
+                }
+            })
+        }
+    }
+
+    getCode() {
+        if (!(/^1[34578]\d{9}$/.test(this.refs.tel.value))) {
+            this.show({text: '请输入正确手机号', show: true});
+            return false;
+        }
+        if (!this.state.telValid) {
+            this.show({text: '手机号码已注册', show: true})
+            return false;
+        }
+        if (this.state.checkState != '获取验证码') {
+            return false;
+        }
+        let count = 60;
+        let timer = '';
+        let sleep = () => {
+            if (count <= 0) {
+                clearTimeout(timer);
+                this.setState({checkState: '获取验证码'});
+                return;
+            }
+            count--;
+            this.setState({checkState: count + 's'});
+            timer = setTimeout(sleep, 1000);
+        }
+
+        sleep();
+        xhr.get(url.getCode, {phoneNumber: this.refs.tel.value}, () => {
+        })
+    }
 
     submit() {
-        // const {tipMsg} = this.props;
-        // if (tipMsg.show) {
-        //     return false;
-        // }
-        // if (!(/^1[34578]\d{9}$/.test(this.refs.tel.value))) {
-        //     this.show({text: '手机号码必填', show: true});
-        //     return false;
-        // }
-        //
-        // if (!this.refs.checkcode.value) {
-        //     this.show({text: '验证码必填', show: true});
-        //     return false;
-        // }
-        // if (!this.refs.psw.value) {
-        //     this.show({text: '密码必填', show: true});
-        //     return false;
-        // }
-        browserHistory.push('/info')
+        const {tipMsg} = this.props;
+        if (tipMsg.show) {
+            return false;
+        }
+        if (!(/^1[34578]\d{9}$/.test(this.refs.tel.value))) {
+            this.show({text: '手机号码必填', show: true});
+            return false;
+        }
+
+        if (!this.refs.checkcode.value) {
+            this.show({text: '验证码必填', show: true});
+            return false;
+        }
+        if (!this.refs.psw.value) {
+            this.show({text: '密码必填', show: true});
+            return false;
+        }
+        if (!this.state.checked) {
+            this.show({text: '请勾选协议', show: true});
+            return false;
+        }
+        xhr.post(url.regist, {
+            account: this.refs.tel.value,
+            password: this.refs.psw.value,
+            checkCode: this.refs.checkcode.value
+        }, (data) => {
+            switch (data.errcode) {
+                case 0:
+                    browserHistory.push('/info/' + data.data);
+                    break;
+                default:
+                    this.show({text: data.errmsg, show: true});
+            }
+        }, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
     }
 
     show(a) {
@@ -64,7 +127,9 @@ class Main extends Component {
                         <div className="weui-cell__hd"><label className="weui-label">手机号</label></div>
                         <div className="weui-cell__bd">
                             <input className="weui-input" ref="tel" type="number" pattern="[0-9]*"
-                                   placeholder="请输入手机号"/>
+                                   onChange={() => {
+                                       this.checkTel()
+                                   }} placeholder="请输入手机号"/>
                         </div>
                     </div>
                     <div className="weui-cell weui-cell_vcode">
@@ -75,7 +140,9 @@ class Main extends Component {
                             <input className="weui-input" ref="checkcode" type="number" placeholder="请输入验证码"/>
                         </div>
                         <div className="weui-cell__ft">
-                            <button className="weui-vcode-btn">获取验证码</button>
+                            <button className="weui-vcode-btn" onClick={() => {
+                                this.getCode()
+                            }}>{this.state.checkState}</button>
                         </div>
                     </div>
                     <div className="weui-cell">

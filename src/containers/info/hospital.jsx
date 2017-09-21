@@ -15,14 +15,14 @@ class Main extends Component {
         this.state = {
             checked: true
         };
-        document.title = '选择医院';
+        document.title = this.props.params.id == 1 ? '选择医院' : '选择科室';
     }
 
     componentDidMount() {
         this.hospital = this.props.hospital;
         this.department = this.props.department;
-        console.log(this.props)
         this.getlist();
+        console.log(this.props.location.state)
     }
 
     getlist(v) {
@@ -35,7 +35,7 @@ class Main extends Component {
         }, (data) => {
             this.searchFlag = false;
             this.setState({
-                lists: data
+                lists: data.respData
             });
         })
     }
@@ -55,7 +55,7 @@ class Main extends Component {
         this.props.params.id == 1
             ? this.hospital(v)
             : this.department(v)
-        browserHistory.push('/info');
+        browserHistory.push({ pathname: '/info/' + this.props.params.user, state: this.props.location.state});
     }
 
     filterText() {

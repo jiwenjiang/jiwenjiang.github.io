@@ -27,4 +27,6 @@ const Departments = (state = {}, action) => {
 }
 
 
+
+
 export {tipMsg, Hospital, Departments};
