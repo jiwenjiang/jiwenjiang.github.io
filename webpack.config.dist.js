@@ -59,7 +59,7 @@ module.exports = {
                 use:['happypack/loader?id=less']
             })
         }, {
-            test: /\.(eot|woff|svg|ttf|woff2|gif|appcache)(\?|$)/, // 解析各种非图片文件
+            test: /\.(eot|woff|svg|ttf|woff2|appcache)(\?|$)/, // 解析各种非图片文件
             exclude: /node_modules/,
             use: ['file-loader?name=[name].[ext]']
         }, {

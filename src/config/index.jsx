@@ -1,6 +1,6 @@
 
 const Main = {//http://192.168.0.141:50000/  // http://192.168.0.115:9001/
-    collectTarget: PRODUCTION ? 'http://192.168.0.137:50002/' : 'http://192.168.0.137:50002/', //目标网站
+    collectTarget: PRODUCTION ? 'http://testapi.linkingmed.com' : 'http://192.168.0.137:50002/', //目标网站
     imageTarget: PRODUCTION ? 'http://139.219.99.239:8080/' : 'http://192.168.0.115:9001/', //目标网站
     name: 'Ant Design Admin',
     platform:'LM-OIS',

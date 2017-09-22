@@ -43,7 +43,7 @@ module.exports = {
             test: /\.less$/, // 去掉exclude: /^node_modules$/和include: [APP_PATH]是为了babel-plugin-import按需加载antd资源
             use: ['happypack/loader?id=less']
         }, {
-            test: /\.(eot|woff|svg|ttf|woff2|gif|appcache)(\?|$)/,
+            test: /\.(eot|woff|svg|ttf|woff2|appcache)(\?|$)/,
             exclude: /node_modules/,
             use: ['file-loader?name=[name].[ext]'],
             include: [APP_PATH]
