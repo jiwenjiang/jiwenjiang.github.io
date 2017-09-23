@@ -25,8 +25,8 @@ class Main extends Component {
                     <div className="weui-msg__icon-area"><i className="weui-icon-success weui-icon_msg"></i></div>
                     <div className="weui-msg__text-area">
                         <h2 className="weui-msg__title">申请成功</h2>
-                        <p className="weui-msg__desc mg-top20">连心医疗将尽快与您取得联系！</p>
-                        <p style={{'margin':'50px 0'}}><a href="http://www.linkingmed.com" style={{'color':'#408ee6'}}>《如何登录连心医疗？》</a></p>
+                        <p className="weui-msg__desc mg-top20">将尽快与您取得联系！</p>
+                        <p style={{'margin':'50px 0'}}><a href="http://www.linkingmed.com" style={{'color':'#408ee6'}}>《如何登录？》</a></p>
                     </div>
                     <div className="weui-msg__opr-area">
                         <p className="weui-btn-area">

@@ -30,15 +30,7 @@ class Main extends Component {
 
     checkTel() {
         if (/^1[34578]\d{9}$/.test(this.refs.tel.value)) {
-            xhr.get(url.checkAccount, {account: this.refs.tel.value}, (data) => {
-                if (data.errcode == 10002) {
-                    this.setState({telValid: true});
-                }
-                if (data.errcode == 10001) {
-                    this.setState({telValid: false});
-                    this.show({text: '手机号码已注册', show: true});
-                }
-            })
+            this.setState({telValid: true});
         }
     }
 
@@ -94,19 +86,20 @@ class Main extends Component {
             this.show({text: '请勾选协议', show: true});
             return false;
         }
-        xhr.post(url.regist, {
-            account: this.refs.tel.value,
-            password: this.refs.psw.value,
-            checkCode: this.refs.checkcode.value
-        }, (data) => {
-            switch (data.errcode) {
-                case 0:
-                    browserHistory.push('/info/' + data.data);
-                    break;
-                default:
-                    this.show({text: data.errmsg, show: true});
-            }
-        }, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+        browserHistory.push('/info/2');
+        // xhr.post(url.regist, {
+        //     account: this.refs.tel.value,
+        //     password: this.refs.psw.value,
+        //     checkCode: this.refs.checkcode.value
+        // }, (data) => {
+        //     switch (data.errcode) {
+        //         case 0:
+        //
+        //             break;
+        //         default:
+        //             this.show({text: data.errmsg, show: true});
+        //     }
+        // }, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
     }
 
     show(a) {
@@ -156,7 +149,7 @@ class Main extends Component {
                     <input id="weuiAgree" type="checkbox" checked={this.state.checked} value={1}
                            onChange={() => this.handleChange()} className="weui-agree__checkbox"/>
                     <span className="weui-agree__text">
-                            已阅读并同意<a>《连心医疗用户协议》</a>
+                            已阅读并同意<a>《xxxx协议》</a>
                     </span>
                 </label>
                 <div className="weui-btn-area">
@@ -166,9 +159,10 @@ class Main extends Component {
         );
     }
 }
-let select = state => {
-    return state
-};
+
+// let select = state => {
+//     return state
+// };
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
@@ -176,4 +170,4 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 }
 
-export default connect(select, mapDispatchToProps)(Main);
+export default connect((state) => state, mapDispatchToProps)(Main);

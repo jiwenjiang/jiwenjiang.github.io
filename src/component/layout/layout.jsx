@@ -33,6 +33,7 @@ class Main extends Component {
     }
 
     render() {
+        console.log(this.props)
         // 这个组件是一个包裹组件，所有的路由跳转的页面都会以this.props.children的形式加载到本组件下
         const {msg} = this.props;
         return (

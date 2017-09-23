@@ -29,12 +29,6 @@ const succ = (location, cb) => {
     }, 'succ');
 }
 
-// const selectDe = (location, cb) => {
-//     require.ensure([], require => {
-//         cb(null, require('../containers/info/department').default)
-//     }, 'selectDe');
-// }
-
 
 const RouteConfig = (
     <Router history={browserHistory}>
