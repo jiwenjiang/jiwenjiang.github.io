@@ -12,3 +12,5 @@ antd
 antd/*
 .happypack
 .happypack/
+.build
+.build/

@@ -4,7 +4,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin'); // 清理文件夹
 var path = require('path');
 
 var ROOT_PATH = path.resolve(__dirname); // 项目根路径
-var BUILD_PATH = path.resolve(ROOT_PATH, 'antd/dist'); // 发布文件所存放的目录
+var BUILD_PATH = path.resolve(ROOT_PATH, 'build/dist'); // 发布文件所存放的目录
 
 
 //dll尚未使用
@@ -26,18 +26,18 @@ module.exports = {
         library: '[name]_library'
     },
     plugins: [
-        new CleanWebpackPlugin(['antd'], {
+        new CleanWebpackPlugin(['build'], {
           root: ROOT_PATH,
           verbose: true,
           dry: false
         }),
         new webpack.DllPlugin({
-            path: './antd/dist/bundle.manifest.json',
+            path: './build/dist/bundle.manifest.json',
             name: '[name]_library',
         }),
        new AssetsPlugin({
         	filename: 'bundle-config.json', 
-        	path: './antd/dist',
+        	path: './build/dist',
         }),
     ]
 };

@@ -13,7 +13,7 @@ var happyThreadPool = HappyPack.ThreadPool({size: os.cpus().length});
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'src'); //__dirname 中的src目录，以此类推
 var APP_FILE = path.resolve(APP_PATH, 'app'); //根目录文件app.jsx地址
-var BUILD_PATH = path.resolve(ROOT_PATH, '/antd/dist'); // 发布文件所存放的目录
+var BUILD_PATH = path.resolve(ROOT_PATH, '/build/dist'); // 发布文件所存放的目录
 
 module.exports = {
     entry: {
@@ -23,7 +23,7 @@ module.exports = {
         ]
     },
     output: {
-        publicPath: '/antd/dist/', //编译好的文件，在服务器的路径,这是静态资源引用路径
+        publicPath: '/build/dist/', //编译好的文件，在服务器的路径,这是静态资源引用路径
         path: BUILD_PATH, //发布文件地址
         filename: '[name].js', //编译后的文件名字
         chunkFilename: '[name].[chunkhash:5].min.js'

@@ -7,12 +7,12 @@ var ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 var os = require('os');
 var HappyPack = require('happypack');
 var happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length});
-var bundleConfig = require("./antd/dist/bundle-config.json");
+var bundleConfig = require("./build/dist/bundle-config.json");
 
 var ROOT_PATH = path.resolve(__dirname); // 项目根路径
 var APP_PATH = path.resolve(ROOT_PATH, 'src'); // 项目src目录
 var APP_FILE = path.resolve(APP_PATH, 'app'); // 项目的入口文件（即src/app.jsx）
-var BUILD_PATH = path.resolve(ROOT_PATH, 'antd/dist'); // 发布文件所存放的目录
+var BUILD_PATH = path.resolve(ROOT_PATH, 'build/dist'); // 发布文件所存放的目录
 
 module.exports = {
     entry: {
@@ -139,7 +139,7 @@ module.exports = {
         }),
         new webpack.DllReferencePlugin({
             context: __dirname,
-            manifest: require('./antd/dist/bundle.manifest.json')
+            manifest: require('./build/dist/bundle.manifest.json')
         }),
         // Uglify 加密压缩源代码
         new ParallelUglifyPlugin({
