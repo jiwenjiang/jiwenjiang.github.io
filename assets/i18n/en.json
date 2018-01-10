@@ -1,0 +1,18 @@
+{
+  "Login": "Login",
+  "username": "username",
+  "password": "password",
+  "404": "404.not found Page",
+  "stones": {
+    "working": "working",
+    "Wild": "Wild Mode",
+    "Standard": "Standard Mode"
+  },
+  "menus": {
+    "cards": "Stones Cards",
+    "roles": "Stones Roles",
+    "video":"Stones Video"
+  },
+  "chinese": "chinese",
+  "english": "english"
+}
