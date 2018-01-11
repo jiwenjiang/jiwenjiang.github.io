@@ -187,7 +187,7 @@ var CardsComponent = (function () {
  * Created by j_bleach on 2017/9/29.
  */
 
-var ip = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production ? 'http://your/prod/ip' : 'http://rap2api.taobao.org/app/mock/';
+var ip = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production ? 'http://your/prod/ip' : 'rap2api.taobao.org/app/mock/';
 //# sourceMappingURL=index.js.map
 
 /***/ }),
