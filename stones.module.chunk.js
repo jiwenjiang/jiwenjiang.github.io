@@ -187,7 +187,7 @@ var CardsComponent = (function () {
  * Created by j_bleach on 2017/9/29.
  */
 
-var ip = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production ? 'http://your/prod/ip' : 'http://rapapi.org/mockjsdata/';
+var ip = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production ? 'http://your/prod/ip' : 'http://rap2api.taobao.org/app/mock/';
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -200,8 +200,8 @@ var ip = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environm
 
 
 const urls = {
-  cardList: '26550/card-list',
-  wilds: '26550/cards'
+  cardList: '3724/GET/card-list',
+  wilds: '3724/GET/card-list'
 }
 
 for (let attr in urls) {
@@ -320,7 +320,7 @@ var StonesCardsComponent = (function () {
 /***/ "../../../../../src/app/stones/stones-roles/stones-roles.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<p>-->\r\n<!--{{'stones.working'|translate}}-->\r\n<!--</p>-->\r\n\r\n<div>\r\n  <h1>商品详情</h1>\r\n  <h3>名称：1</h3>\r\n  <h3>价格：2</h3>\r\n  <h3>描述：3</h3>\r\n</div>\r\n\r\n<p>\r\nhx 需写在section中\r\n<li>p标签中不能嵌套heading HTML，涨姿势了</li>\r\n</p>\r\n"
+module.exports = "<!--&lt;!&ndash;<p>&ndash;&gt;-->\r\n<!--&lt;!&ndash;{{'stones.working'|translate}}&ndash;&gt;-->\r\n<!--&lt;!&ndash;</p>&ndash;&gt;-->\r\n\r\n<!--<div>-->\r\n  <!--<h1>商品详情</h1>-->\r\n  <!--<h3>名称：1</h3>-->\r\n  <!--<h3>价格：2</h3>-->\r\n  <!--<h3>描述：3</h3>-->\r\n<!--</div>-->\r\n\r\n<!--<p>-->\r\n<!--hx 需写在section中-->\r\n<!--<li>p标签中不能嵌套heading HTML，涨姿势了</li>-->\r\n<!--</p>-->\r\n"
 
 /***/ }),
 
