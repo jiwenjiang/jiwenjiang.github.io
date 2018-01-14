@@ -154,7 +154,6 @@ var CardsComponent = (function () {
                     type: 'success'
                 });
             }
-            console.log(v);
         });
     };
     __decorate([
@@ -177,46 +176,118 @@ var CardsComponent = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/config/ip/index.ts":
+/***/ "../../../../../src/app/stones/stones-cards/data.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ip; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cards; });
 /**
- * Created by j_bleach on 2017/9/29.
+ * Created by j_bleach on 2017/10/6.
  */
-
-var ip = __WEBPACK_IMPORTED_MODULE_0__environments_environment__["a" /* environment */].production ? 'http://your/prod/ip' : 'rap2api.taobao.org/app/mock/';
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/config/ip/stones/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__("../../../../../src/app/config/ip/index.ts");
-
-
-const urls = {
-  cardList: '3724/GET/card-list',
-  wilds: '3724/GET/card-list'
-}
-
-for (let attr in urls) {
-  urls[attr] = __WEBPACK_IMPORTED_MODULE_0__index__["a" /* ip */] + urls[attr]
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (urls);
-
+var cards = {
+    'resCode': 0,
+    'resData': [
+        {
+            'comment': 1,
+            'count': '8081',
+            'date': '2016.04.21',
+            'desc': 'Hearthstone: Knights of the Frozen Throne Announcement Trailer',
+            'id': 1,
+            'haslike': false,
+            'like': 6,
+            'name': 'Goblins',
+            'role': 'master',
+            'type': 'controller',
+            'url': 'http://assets1.ignimgs.com/2017/07/08/hearthstone-frozen-throne-1280b-1499500976710_1280w.jpg'
+        },
+        {
+            'comment': 13,
+            'count': '8721',
+            'date': '2017.06.09',
+            'desc': 'You want to get into Hearthstone, but youre scared.',
+            'id': 2,
+            'haslike': true,
+            'like': 10,
+            'name': 'Tauren Warrior',
+            'role': 'Starcraft',
+            'type': 'controller',
+            'url': 'http://pic31.photophoto.cn/20140422/0005018397617350_b.jpg'
+        },
+        {
+            'comment': 13,
+            'count': '4212',
+            'date': '2017.01.20',
+            'desc': 'You hear the stories of intricate deck-building and elaborate mind games',
+            'id': 3,
+            'haslike': false,
+            'like': 18,
+            'name': 'Adventure',
+            'role': 'master',
+            'type': 'Artwork',
+            'url': 'https://assets1.ignimgs.com/thumbs/userUploaded/2017/7/7/hearthstoneannouncethumb-1499393130316_270h.jpg'
+        },
+        {
+            'comment': 4,
+            'count': '5082',
+            'date': '2016.08.18',
+            'desc': 'Its so hard o show the datas, rap is not a good project',
+            'id': 4,
+            'haslike': false,
+            'like': 18,
+            'name': 'announce',
+            'role': 'master',
+            'type': 'knight',
+            'url': 'http://joymepic.joyme.com/article/uploads/allimg/201507/1436341988230367.jpg'
+        },
+        {
+            'comment': 11,
+            'count': '5231',
+            'date': '2016.09.28',
+            'desc': 'Recently I had the happy task of making the key art for Hearthstones first expansion',
+            'id': 5,
+            'haslike': false,
+            'like': 7,
+            'name': 'Maiev',
+            'role': 'master',
+            'type': 'controller',
+            'url': 'http://cdn.gamer-network.net/2017/usgamer/best-warlock-cards-hearthstone.jpg'
+        },
+        {
+            'comment': 5,
+            'count': '2345',
+            'date': '2016.09.11',
+            'desc': 'How easy is it to get the Crystal Core reward? I was able to profit from it on Turn 5.',
+            'id': 6,
+            'haslike': true,
+            'like': 13,
+            'name': 'Mogu shan Warden',
+            'role': 'master',
+            'type': 'wild',
+            'url': 'https://cdnb.artstation.com/p/assets/images/images/000/325/943/large/laurel-d-austin-goblinsvgnomes.jpg?1443928784'
+        },
+        {
+            'comment': 16,
+            'count': '3461',
+            'date': '2017.10.05',
+            'desc': 'Above: Hearthstons Mean Streets of Gadgetzan expansion.',
+            'id': 7,
+            'haslike': false,
+            'like': 14,
+            'name': 'Liadrin',
+            'role': 'master',
+            'type': 'wild',
+            'url': 'http://www.ooqiu.com/uploads/allimg/150621/96-1506211025140-L.jpg'
+        }
+    ]
+};
+//# sourceMappingURL=data.js.map
 
 /***/ }),
 
 /***/ "../../../../../src/app/stones/stones-cards/stones-cards.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-tab-group class=\"height100\" [(selectedIndex)]=\"selectedTab\" (selectChange)=\"selectChange()\">\r\n  <md-tab label=\"{{'stones.Standard'|translate}}\">\r\n\r\n    <div class=\"pd-1 mgbottom\" fxLayout=\"row\" fxLayoutWrap fxLayoutAlign=\"left\" [@httpState]=\"standard\">\r\n      <div fxFlex.sm=\"33%\" fxFlex.md=\"25%\" fxFlex.xl=\"20%\" fxFlex.xs=\"100%\" fxFlex.lg=\"20%\"\r\n           *ngFor=\"let v of data\">\r\n        <app-cards [data]=\"v\" ></app-cards>\r\n      </div>\r\n    </div>\r\n\r\n  </md-tab>\r\n  <md-tab label=\"{{'stones.Wild'|translate}}\">\r\n    <div class=\"pd-1 mgbottom\" fxLayout=\"row\" fxLayoutWrap fxLayoutAlign=\"left\" [@httpState]=\"wild\">\r\n      <div fxFlex.sm=\"33%\" fxFlex.md=\"25%\" fxFlex.xl=\"20%\" fxFlex.xs=\"100%\" fxFlex.lg=\"20%\"\r\n           *ngFor=\"let v of wildData\">\r\n        <app-cards [data]=\"v\" id=\"2\"></app-cards>\r\n      </div>\r\n    </div>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n\r\n"
+module.exports = "<md-tab-group class=\"height100\" [(selectedIndex)]=\"selectedTab\" (selectChange)=\"selectChange()\">\r\n  <md-tab label=\"{{'stones.Standard'|translate}}\">\r\n\r\n    <div class=\"pd-1 mgbottom\" fxLayout=\"row\" fxLayoutWrap fxLayoutAlign=\"left\" [@httpState]=\"standard\">\r\n      <div fxFlex.sm=\"33%\" fxFlex.md=\"25%\" fxFlex.xl=\"20%\" fxFlex.xs=\"100%\" fxFlex.lg=\"20%\"\r\n           *ngFor=\"let v of data\">\r\n        <app-cards [data]=\"v\" ></app-cards>\r\n      </div>\r\n    </div>\r\n\r\n  </md-tab>\r\n  <md-tab label=\"{{'stones.Wild'|translate}}\">\r\n    <div class=\"pd-1 mgbottom\" fxLayout=\"row\" fxLayoutWrap fxLayoutAlign=\"left\" [@httpState]=\"wild\">\r\n      <div fxFlex.sm=\"33%\" fxFlex.md=\"25%\" fxFlex.xl=\"20%\" fxFlex.xs=\"100%\" fxFlex.lg=\"20%\"\r\n           *ngFor=\"let v of wildData\">\r\n        <!--<app-cards [data]=\"v\" ></app-cards>-->\r\n      </div>\r\n    </div>\r\n  </md-tab>\r\n</md-tab-group>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -245,9 +316,9 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StonesCardsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../../_@angular_core@4.4.6@@angular/core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_http_http_service__ = __webpack_require__("../../../../../src/app/service/http/http.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_ip_stones__ = __webpack_require__("../../../../../src/app/config/ip/stones/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animations_animations__ = __webpack_require__("../../../../../src/app/animations/animations.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_shuffle__ = __webpack_require__("../../../../../src/app/utils/shuffle.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animations_animations__ = __webpack_require__("../../../../../src/app/animations/animations.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_shuffle__ = __webpack_require__("../../../../../src/app/utils/shuffle.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data__ = __webpack_require__("../../../../../src/app/stones/stones-cards/data.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -274,22 +345,30 @@ var StonesCardsComponent = (function () {
     StonesCardsComponent.prototype.getStandard = function () {
         var _this = this;
         this.standard = ['pending'][0];
-        this.http.get(__WEBPACK_IMPORTED_MODULE_2__config_ip_stones__["a" /* default */].cardList, '', function (data) {
-            setTimeout(function () {
-                _this.standard = 'full';
-            }, 500);
-            _this.data = data.sort(new __WEBPACK_IMPORTED_MODULE_4__utils_shuffle__["a" /* Shuffle */]().shuffle);
-        }, '');
+        // this.http.get(url.cardList, '', (data) => {
+        //   setTimeout(() => {
+        //     this.standard = 'full';
+        //   }, 500);
+        //   this.data = data.sort(new Shuffle().shuffle);
+        // }, '');
+        setTimeout(function () {
+            _this.standard = 'full';
+            _this.data = __WEBPACK_IMPORTED_MODULE_4__data__["a" /* cards */].resData.sort(new __WEBPACK_IMPORTED_MODULE_3__utils_shuffle__["a" /* Shuffle */]().shuffle);
+        }, 500);
     };
     StonesCardsComponent.prototype.getWilds = function () {
         var _this = this;
         this.wild = ['pending'][0];
-        this.http.get(__WEBPACK_IMPORTED_MODULE_2__config_ip_stones__["a" /* default */].wilds, '', function (data) {
-            setTimeout(function () {
-                _this.wild = 'full';
-            }, 500);
-            _this.wildData = data.sort(new __WEBPACK_IMPORTED_MODULE_4__utils_shuffle__["a" /* Shuffle */]().shuffle);
-        }, '');
+        // this.http.get(url.wilds, '', (data) => {
+        //   setTimeout(() => {
+        //     this.wild = 'full';
+        //   }, 500);
+        //   this.wildData = data.sort(new Shuffle().shuffle);
+        // }, '');
+        setTimeout(function () {
+            _this.wild = 'full';
+            _this.wildData = __WEBPACK_IMPORTED_MODULE_4__data__["a" /* cards */].resData.sort(new __WEBPACK_IMPORTED_MODULE_3__utils_shuffle__["a" /* Shuffle */]().shuffle);
+        }, 500);
     };
     StonesCardsComponent.prototype.selectChange = function () {
         if (this.selectedTab === 0) {
@@ -298,14 +377,13 @@ var StonesCardsComponent = (function () {
         if (this.selectedTab === 1) {
             this.getWilds();
         }
-        console.log(this.selectedTab);
     };
     StonesCardsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
             selector: 'app-stones-cards',
             template: __webpack_require__("../../../../../src/app/stones/stones-cards/stones-cards.component.html"),
             styles: [__webpack_require__("../../../../../src/app/stones/stones-cards/stones-cards.component.less")],
-            animations: [__WEBPACK_IMPORTED_MODULE_3__animations_animations__["a" /* easeIn */]]
+            animations: [__WEBPACK_IMPORTED_MODULE_2__animations_animations__["a" /* easeIn */]]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_http_http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_http_http_service__["a" /* HttpService */]) === "function" && _a || Object])
     ], StonesCardsComponent);
