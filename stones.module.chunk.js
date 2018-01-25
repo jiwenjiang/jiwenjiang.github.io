@@ -245,7 +245,7 @@ QRCodeComponent = __decorate([
 /***/ "../../../../../src/app/stones/stones-aboutme/stones-aboutme.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"profile-card-wrap\">\r\n  <input id=\"check\" type=\"checkbox\" class=\"check\"><label for=\"check\" class=\"toggle\"> + </label>\r\n  <div class=\"content\" data-text=\"Hi there !\">\r\n    <div class=\"title\">@j_bleach</div>\r\n    <p>I'm a web designer from France who love Polymer-project, HTML/CSS and dogs. <br/> <br/> Teaching is what I like, Learning is what I love.</p>\r\n  </div>\r\n  <div class=\"link-info\">\r\n    <div class=\"social\">\r\n      <a class=\"link gh\" href=\"https://github.com/jiwenjiang\" target=\"_blank\"><i class=\"icon icon-github\"></i></a>\r\n      <a class=\"link sf\" href=\"https://segmentfault.com/u/_bleach\" target=\"_blank\"><i>sf</i></a>\r\n      <a class=\"link qq\" (click)=\"openDialog('qq')\"><i class=\"icon icon-qq\"></i></a>\r\n      <a class=\"link wc\" (click)=\"openDialog('wechat')\"><i class=\"icon icon-weixin\"></i></a>\r\n    </div>\r\n    <div class=\"photo\"></div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"profile-card-wrap\">\r\n  <input id=\"check\" type=\"checkbox\" class=\"check\"><label for=\"check\" class=\"toggle\"> + </label>\r\n  <div class=\"content\">\r\n    <div class=\"title\">@j_bleach</div>\r\n    <p>{{'aboutme.synopsis'|translate}}<br/> <br/> {{'aboutme.motto'|translate}}</p>\r\n  </div>\r\n  <div class=\"link-info\">\r\n    <div class=\"social\">\r\n      <a class=\"link gh\" href=\"https://github.com/jiwenjiang\" target=\"_blank\"><i class=\"icon icon-github\"></i></a>\r\n      <a class=\"link sf\" href=\"https://segmentfault.com/u/_bleach\" target=\"_blank\"><i>sf</i></a>\r\n      <a class=\"link qq\" (click)=\"openDialog('qq')\"><i class=\"icon icon-qq\"></i></a>\r\n      <a class=\"link wc\" (click)=\"openDialog('wechat')\"><i class=\"icon icon-weixin\"></i></a>\r\n    </div>\r\n    <div class=\"photo\"></div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -521,7 +521,6 @@ var StonesCardsComponent = (function () {
         if (this.selectedTab === 1) {
             this.getWilds();
         }
-        console.log(this.selectedTab);
     };
     return StonesCardsComponent;
 }());
