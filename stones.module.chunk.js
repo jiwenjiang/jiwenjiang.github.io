@@ -3,7 +3,7 @@ webpackJsonp(["stones.module"],{
 /***/ "../../../../../src/app/components/card-comment/card-comment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dialog\">\r\n  <h3 md-dialog-title>What about <span class=\"red\">{{data.title}}</span>?</h3>\r\n  <md-dialog-content>\r\n    <md-input-container class=\"width\">\r\n      <textarea matInput placeholder=\"Commentary\" ></textarea>\r\n    </md-input-container>\r\n  </md-dialog-content>\r\n  <md-dialog-actions>\r\n    <div class=\"pull-right\">\r\n      <button md-raised-button mat-dialog-close>No</button>\r\n      <button md-raised-button class=\"primary-color\" (click)=\"closeDialog()\">Yes</button>\r\n    </div>\r\n  </md-dialog-actions>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"dialog\">\n  <h3 md-dialog-title>What about <span class=\"red\">{{data.title}}</span>?</h3>\n  <md-dialog-content>\n    <md-input-container class=\"width\">\n      <textarea matInput placeholder=\"Commentary\" ></textarea>\n    </md-input-container>\n  </md-dialog-content>\n  <md-dialog-actions>\n    <div class=\"pull-right\">\n      <button md-raised-button mat-dialog-close>No</button>\n      <button md-raised-button class=\"primary-color\" (click)=\"closeDialog()\">Yes</button>\n    </div>\n  </md-dialog-actions>\n</div>\n\n"
 
 /***/ }),
 
@@ -179,7 +179,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/components/qr-code/qr-code.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  <img src={{data}} alt={{data}} class=\"imgSize\">\n</p>\n"
+module.exports = "<p>\r\n  <img src={{data}} alt={{data}} class=\"imgSize\">\r\n</p>\r\n"
 
 /***/ }),
 
@@ -998,14 +998,14 @@ var Shuffle = (function () {
 /***/ "../../../../../src/assets/img/bgimg.jpg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "bgimg.46cfb083a193d0a59426.jpg";
+module.exports = __webpack_require__.p + "bgimg.7d7bc1ff2824870225ce.jpg";
 
 /***/ }),
 
 /***/ "../../../../../src/assets/img/head.jpg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "head.1748962988568b71a0a2.jpg";
+module.exports = __webpack_require__.p + "head.cb5232eb7373f470ba50.jpg";
 
 /***/ }),
 
