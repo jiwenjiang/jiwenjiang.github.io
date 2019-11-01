@@ -9,11 +9,12 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/service-worker.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/main.49b4ac86.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/main.49b4ac86.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/main.4ebea297.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/main.4ebea297.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/main.b8b76aed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/main.b8b76aed.js.map" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/media/iconfont.219121a0.eot" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/media/iconfont.c447c89a.ttf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/media/iconfont.ca981d23.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,6 +65,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -76,14 +78,9 @@
               <option name="myItemId" value="jiwenjiang.github.io" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,12 +186,14 @@
       <updated>1517663185880</updated>
       <workItem from="1517663187422" duration="785000" />
       <workItem from="1535190095240" duration="1243000" />
-      <workItem from="1546332296515" duration="57000" />
+      <workItem from="1546332296515" duration="400000" />
+      <workItem from="1546434178394" duration="85000" />
+      <workItem from="1572615668223" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2085000" />
+    <option name="totallyTimeSpent" value="2534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="0" />
@@ -228,6 +227,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/static/js/main.b8b76aed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.b8b76aed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -257,6 +272,14 @@
     <entry file="file://$PROJECT_DIR$/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.b8b76aed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
